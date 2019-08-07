@@ -1,26 +1,41 @@
 <template>
   <div class="counter-warp">
-    <van-button type="default">默认按钮</van-button>
-    <van-button type="primary">主要按钮</van-button>
-    <van-button type="info">信息按钮</van-button>
-    <van-button type="warning">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+    <van-button type="primary" @click="getInfo">主要按钮</van-button>
+    <van-search :value="search" placeholder="请输入搜索关键词" />
+    <text>{{text1}}</text>
+    <text>{{text1}}</text>
   </div>
 </template>
 
 <script>
 // Use Vuex
-
+import {findAllByTenantCodeAndType} from '../../httpconfig/api'
 export default {
   computed: {
     count () {
     }
   },
-  methods: {
-    increment () {
-    },
-    decrement () {
+  data(){
+    return {
+      search: '',
+      text1: ''
     }
+  },
+  methods: {
+    getInfo() {
+      findAllByTenantCodeAndType({
+         token: 'SybYTtt8NPInVnROB1VP2KiBesVDkLqs',
+         tenantCode: '08d5f0c68cc94b94af8c9d1dee768cb9',
+       })
+       .then(d=>{
+         debugger
+         this.text1 = JSON.stringify(d.data)
+       })
+       .catch((e) => console.log("error", e))
+    }
+  },
+  onShow(){
+    console.log(this.$store.state.msg)
   }
 }
 </script>

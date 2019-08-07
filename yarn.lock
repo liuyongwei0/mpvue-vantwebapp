@@ -6239,11 +6239,6 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vant-weapp@^0.5.17:
-  version "0.5.17"
-  resolved "https://registry.npm.taobao.org/vant-weapp/download/vant-weapp-0.5.17.tgz#49574950020443df1a97cf382c64f92635a0da78"
-  integrity sha1-SVdJUAIEQ98al884LGT5JjWg2ng=
-
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vary/download/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
